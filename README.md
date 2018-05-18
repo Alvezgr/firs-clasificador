@@ -2,8 +2,8 @@
 
 requisitos
 /*
-scikit-learn
-numpy
+scikit-learn, 
+numpy, &&
 scipy
 
 -se puede instalar con
