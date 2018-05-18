@@ -1,26 +1,26 @@
 #usando tree de la libreria sklearn
 from sklearn import tree
 
+#importando las funciones que usamos en skcontabla
+from skcontabla import lista_X,lista_Y
+
+
 def predictor():
 	
-	#[altura, peso, talle][X lista de listas]
-	X = [[181, 80, 44], [177, 70, 43], [160, 60, 38],
-	 [154, 54, 37], [166, 64, 40], [190, 90 ,47],
-	 [175, 64, 39], [177, 70, 40], [159, 75, 42],
-	 [181, 85, 43]]
-
-	Y = ['Hombre','Hombre','Mujer','Mujer','Mujer',
-	'Hombre','Mujer','Mujer','Hombre','Hombre']
+	#[peso min, peso max, altura][X lista de listas, en kg y mts]
+	X = lista_X()
+	#['Mujer','Hombre']
+	Y = lista_Y()
 
 	#clasificador clf
 	clf = tree.DecisionTreeClassifier()
 	clf = clf.fit(X,Y)
 
-	#medidas para entrenar
-	prediccion = clf.predict([[180,95,43]])
+	#medidas para evaluar
+	prediccion = clf.predict([[84.9,89.1,2.6]])
 
 	return prediccion
-
+	
 
 if __name__ == "__main__":
 	print(predictor())
