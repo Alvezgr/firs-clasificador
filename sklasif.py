@@ -18,8 +18,13 @@ def predictor():
 
 	#medidas para evaluar
 	prediccion = clf.predict([[84.9,89.1,2.6]])
+	
+	if prediccion == 0:
+		gender = "Mujer"
+	if prediccion == 1:
+		gender = "Hombre"
 
-	return prediccion
+	return gender
 	
 
 if __name__ == "__main__":
